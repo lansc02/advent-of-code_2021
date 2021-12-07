@@ -28,8 +28,8 @@ public class day3x2 {
     }
 
     private static void calcPowerConsumption(List<String> data) {
-        String epsilon = "";
-        String gamma = "";
+        StringBuilder epsilon = new StringBuilder();
+        StringBuilder gamma = new StringBuilder();
         final int fieldlength = data.get(0).length();
 
         int[] state = new int[fieldlength];
@@ -43,20 +43,20 @@ public class day3x2 {
 
         for (int field :state) {
            if (field<(data.size()*0.5)){
-               gamma += '0';
-               epsilon += '1';
+               gamma.append('0');
+               epsilon.append('1');
            }
            else if (field > (data.size()*0.5)){
-               gamma += '1';
-               epsilon += '0';
+               gamma.append('1');
+               epsilon.append('0');
            }
            else{
                System.out.println("This should not hava happened...");
            }
         }
 
-        long igamma = Long.parseLong(gamma, 2);//.intValue();
-        long iepsilon = Long.parseLong(epsilon,2);//.intValue();
+        long igamma = Long.parseLong(gamma.toString(), 2);//.intValue();
+        long iepsilon = Long.parseLong(epsilon.toString(),2);//.intValue();
         System.out.println("Gamma: "+ gamma+", "+ igamma);
         System.out.println("Epsilon: "+epsilon+", "+iepsilon);
         System.out.println("Power consumption: " + iepsilon*igamma );
