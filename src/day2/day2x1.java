@@ -1,13 +1,14 @@
+package day2;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class day2x2 {
+public class day2x1 {
 
     public static void calcPosition(List<String> subinstructions) {
         int horizontal = 0;
         int vertical = 0;
-        int aim = 0;
 
         for (String instr : subinstructions) {
             String direction = instr.split(" ")[0];
@@ -15,13 +16,12 @@ public class day2x2 {
             switch (direction) {
                 case "forward":
                     horizontal += value;
-                    vertical = vertical + aim*value;
                     break;
                 case "up":
-                    aim -= value;
+                    vertical -= value;
                     break;
                 case "down":
-                    aim += value;
+                    vertical += value;
                     break;
             }
         }
@@ -35,7 +35,7 @@ public class day2x2 {
     }
 
     public static void main(String[] args) {
-        List<String> data = utils.readStringInput("inputs/day2x1.txt");
+        List<String> data = utils.inputReaders.readStringInput("inputs/day2.day2x1.txt");
         calcPosition(data);
     }
 }

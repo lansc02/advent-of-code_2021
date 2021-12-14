@@ -1,3 +1,5 @@
+package utils;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -5,7 +7,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 
-public class utils {
+public class inputReaders {
     private static List<String> readInput(String filename) {
         /*
         Tried to return lines as a stream but due to try-with-resources this stream was autoclosed and not

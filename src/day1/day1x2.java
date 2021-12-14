@@ -1,3 +1,5 @@
+package day1;
+
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,7 +37,7 @@ public class day1x2 {
 
     public static void main(String[] args) {
        // List<Integer> depthMeasurements = test();
-        List<Integer> depthMeasurements = utils.readIntegerInput("inputs/day1x1.txt");
+        List<Integer> depthMeasurements = utils.inputReaders.readIntegerInput("inputs/day1.day1x1.txt");
         calcrises(depthMeasurements);
     }
 }

@@ -1,3 +1,5 @@
+package day3;
+
 import java.text.CharacterIterator;
 import java.text.StringCharacterIterator;
 import java.util.ArrayList;
@@ -24,7 +26,7 @@ public class day3x1 {
     }
 
     public static void main(String[] args) {
-        List<String> data = utils.readStringInput("inputs/day3x1.txt");
+        List<String> data = utils.inputReaders.readStringInput("inputs/day3.day3x1.txt");
         //List<String> data= test();
         calcPowerConsumption(data);
     }

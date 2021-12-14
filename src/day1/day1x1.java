@@ -1,3 +1,5 @@
+package day1;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -29,7 +31,7 @@ public class day1x1 {
     }
 
     public static void main(String[] args) {
-        List<Integer> depthMeasurements = utils.readIntegerInput("inputs/day1x1.txt");
+        List<Integer> depthMeasurements = utils.inputReaders.readIntegerInput("day1.day1x1.txt");
         // List<Integer> depthMeasurements = test();
         calcDepthChanges(depthMeasurements);
     }

@@ -1,3 +1,5 @@
+package day3;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -10,7 +12,7 @@ public class day3x2 {
     }
 
     public static void main(String[] args) {
-        List<String> data = utils.readStringInput("inputs/day3x1.txt");
+        List<String> data = utils.inputReaders.readStringInput("inputs/day3.day3x1.txt");
         //List<String> data= test();
         List<String> o2 = calcLifeSupport(data, "o2", 0);
         System.out.println(Integer.valueOf(o2.get(0),2));
