@@ -4,7 +4,6 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static java.util.stream.Collectors.toMap;
 
 public class utils {
     private static List<String> readInput(String filename) {
