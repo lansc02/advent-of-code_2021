@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class day4x1 {
+public class day4x2 {
     static List<BingoBoard> boards;
     static List<Integer> randomNumbers;
 

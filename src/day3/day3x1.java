@@ -26,7 +26,7 @@ public class day3x1 {
     }
 
     public static void main(String[] args) {
-        List<String> data = utils.inputReaders.readStringInput("inputs/day3.day3x1.txt");
+        List<String> data = utils.inputReaders.readStringInput("src/day3/day3x1.txt");
         //List<String> data= test();
         calcPowerConsumption(data);
     }
