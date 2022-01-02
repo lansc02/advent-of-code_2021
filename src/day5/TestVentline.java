@@ -1,6 +1,10 @@
 package day5;
 
+import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class TestVentline {
 
@@ -24,6 +28,7 @@ public class TestVentline {
 
     @Test
     public void TestSwappedStartEnd(){
+        //Day5x2 thsi fails because the implementation changed
         Coordinate end = new Coordinate(1, 2);
         Coordinate start = new Coordinate(5, 2);
         Ventline test = new Ventline(start, end);
@@ -39,4 +44,17 @@ public class TestVentline {
         assert(test.points.size() == 4);
     }
 
-}
+    @Test
+    public void TestDiagonal(){
+        Coordinate start = new Coordinate(1,1);
+        Coordinate end = new Coordinate(3,3);
+        Ventline testLine = new Ventline(start, end);
+        ArrayList<Coordinate> expected = new ArrayList<>(Arrays.asList(
+                new Coordinate(1,1),
+                new Coordinate(2,2),
+                new Coordinate(3,3)));
+        assert testLine.points.containsAll(expected);
+        assert expected.containsAll(testLine.points);
+        }
+    }
+

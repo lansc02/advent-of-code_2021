@@ -8,11 +8,6 @@ public class Ventline {
     public ArrayList<Coordinate> points;
 
     public Ventline(Coordinate start, Coordinate end) {
-        if (((start.y == end.y) && (start.x > end.x)) || ((start.y > end.y) && (start.x == end.x))){
-            Coordinate cont = start;
-            start = end;
-            end = cont;
-        }
         this.start = start;
         this.end = end;
         this.points = calcPoints();
@@ -25,22 +20,24 @@ public class Ventline {
 
     private ArrayList<Coordinate> calcPoints(){
         ArrayList<Coordinate> points = new ArrayList<>();
+        points.add(start);
+
+        int x_signum = Integer.signum(end.x-start.x);
+        int y_signum = Integer.signum(end.y-start.y);
+
         int xvalue = start.x;
         int yvalue = start.y;
-        if (start.x==end.x) {
-            points.add(start);
-            while(yvalue < end.y){
-                yvalue++;
-                points.add(new Coordinate(xvalue, yvalue));
+
+        while (xvalue != end.x || yvalue != end.y){
+            if (xvalue != end.x){
+                xvalue = xvalue + x_signum*1;
             }
-        }
-        else if (start.y==end.y){
-            points.add(start);
-            while(xvalue < end.x){
-                xvalue++;
-                points.add(new Coordinate(xvalue, yvalue));
+            if (yvalue != end.y){
+                yvalue = yvalue + y_signum*1;
             }
+            points.add(new Coordinate(xvalue, yvalue));
         }
+
         return points;
     }
 }
