@@ -3,6 +3,7 @@ package utils;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -27,6 +28,11 @@ public class inputReaders {
 
     public static List<Integer> readIntegerInput(String filename) {
         return readInput(filename).stream().map(Integer::valueOf).toList();
+    }
+
+    public static List<Integer> readSingleLineIntegerInput(String filename){
+        return Arrays.stream(readInput(filename).get(0).split(",")).map(Integer::valueOf).toList();
+
     }
 
     public static List<Byte> readByteInput(String filename) {
